@@ -24,12 +24,9 @@ class Paytmfront extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  SizedBox(
-                    width: 10,
-                  ),
                   Positioned(
                       child: Padding(
-                    padding: const EdgeInsets.only(right: 100),
+                    padding: const EdgeInsets.only(right: 120),
                     child: Container(
                       color: Colors.blue,
                       height: 100,
@@ -37,7 +34,7 @@ class Paytmfront extends StatelessWidget {
                     ),
                   )),
                   Positioned(
-                      left: 10,
+                      left: 5,
                       bottom: 5,
                       child: CircleAvatar(
                         radius: 25,
@@ -367,6 +364,8 @@ class Paytmfront extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "Invest & Trade In Stocks",
@@ -392,6 +391,73 @@ class Paytmfront extends StatelessWidget {
                           )),
                     ],
                   ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 250,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    border: Border.all(
+                        width: 1, color: Colorconstant.primaryborder),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Insurance",
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    GridView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: database.insurancelist.length + 1,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 4,
+                      ),
+                      itemBuilder: (context, index) =>
+                          index == database.insuranceimagelist.length
+                              ? Column(
+                                  children: [
+                                    SizedBox(
+                                      height: 12,
+                                    ),
+                                    CircleAvatar(
+                                      radius: 17,
+                                      backgroundColor: Color(0xff70CCE0),
+                                      child: Icon(
+                                        Icons.arrow_forward_ios,
+                                        color: Colorconstant.primaryblack,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      "view more",
+                                      style: TextStyle(
+                                          color: Colorconstant.primaryblack,
+                                          fontWeight: FontWeight.bold),
+                                    )
+                                  ],
+                                )
+                              : front1card(
+                                  index: index,
+                                  height: 70,
+                                  width: 50,
+                                  image: database.insuranceimagelist[index],
+                                  text: database.insurancelist[index],
+                                  fontsize: 12,
+                                  page: Paytmfront()),
+                    )
+                  ],
                 ),
               ),
             ),

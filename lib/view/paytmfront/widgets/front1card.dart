@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:paytm1/database/db.dart';
-import 'package:paytm1/utils/colorconstant/colorconstant.dart';
 
 class front1card extends StatelessWidget {
   const front1card(

@@ -82,4 +82,19 @@ class database {
     "Paytm Stocks",
     "Mutual Funds"
   ];
+
+  static List insurancelist = [
+    "Bike Insurance",
+    "Car Insurance",
+    "Health Insurance",
+    "Accidental Insurance",
+    "Hospital Cash",
+  ];
+  static List insuranceimagelist = [
+    "assets/images/image 19 (1).png",
+    "assets/images/image 20 (1).png",
+    "assets/images/image 21 (1).png",
+    "assets/images/image 22 (1).png",
+    "assets/images/image 23 (1).png",
+  ];
 }
